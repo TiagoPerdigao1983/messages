@@ -11,11 +11,8 @@ import { CreateMessageDto } from './dtos/create-message.dto';
 
 @Controller('messages')
 export class MessagesController {
-  messagesService: MessagesService;
-
-  constructor() {
+  constructor(public messagesService: MessagesService) {
     //Use dependency injection
-    this.messagesService = new MessagesService();
   }
 
   @Get()
